@@ -32,6 +32,7 @@
         <link rel='stylesheet' id='twentytwelve-style-css' href='{% static 'blog/css/style.css' %}' type='text/css'
               media='all'/>
         <link href="{% static 'blog/css/oauth_style.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
         {% comment %}<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>{% endcomment %}
         <!--[if lt IE 9]>
         <link rel='stylesheet' id='twentytwelve-ie-css'  href='{% static 'blog/css/ie.css' %}' type='text/css' media='all' />
@@ -51,7 +52,15 @@
             </h1>
             <h2 class="site-description">{{ SITE_DESCRIPTION }}</h2>
         </hgroup>
-
+    <aside id="search-2" class="widget widget_search pull-right">
+        <form role="search" method="get" id="searchform" class="searchform" action="/search">
+            <div>
+                <label class="screen-reader-text" for="s">搜索：</label>
+                <input type="text" value="" name="q" id="q"/>
+                <input type="submit" id="searchsubmit" value="搜索"/>
+            </div>
+        </form>
+    </aside>
         {% cache 36000 nav %}
             {% include 'share_layout/nav.html' %}
         {% endcache %}
